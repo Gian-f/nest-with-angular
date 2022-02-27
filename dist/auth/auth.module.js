@@ -14,7 +14,11 @@ const auth_service_1 = require("./auth.service");
 const auth_controller_1 = require("./auth.controller");
 const local_strategy_1 = require("./strategies/local.strategy");
 const jwt_1 = require("@nestjs/jwt");
+const login_validation_middleware_1 = require("./middlewares/login-validation.middleware");
 let AuthModule = class AuthModule {
+    configure(consumer) {
+        consumer.apply(login_validation_middleware_1.LoginValidationMiddleware).forRoutes('login');
+    }
 };
 AuthModule = __decorate([
     (0, common_1.Module)({
