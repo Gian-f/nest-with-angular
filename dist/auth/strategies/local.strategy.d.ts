@@ -4,6 +4,11 @@ declare const LocalStrategy_base: new (...args: any[]) => Strategy;
 export declare class LocalStrategy extends LocalStrategy_base {
     private authService;
     constructor(authService: AuthService);
-    validate(email: string, password: string): void;
+    validate(email: string, password: string): Promise<{
+        password: any;
+        id: number;
+        email: string;
+        name: string;
+    }>;
 }
 export {};

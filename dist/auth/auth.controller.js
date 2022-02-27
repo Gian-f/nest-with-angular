@@ -18,6 +18,7 @@ let AuthController = class AuthController {
         this.authService = authService;
     }
     login() {
+        return 'realizar login';
     }
 };
 __decorate([
