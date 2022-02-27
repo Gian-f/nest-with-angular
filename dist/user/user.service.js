@@ -22,8 +22,10 @@ let UserService = class UserService {
         const createdUser = await this.prisma.user.create({ data });
         return Object.assign(Object.assign({}, createdUser), { password: undefined });
     }
-    findOne(id) {
-        return `This action returns a #${id} user`;
+    findByEmail(email) {
+        return this.prisma.user.findUnique({
+            where: { email },
+        });
     }
 };
 UserService = __decorate([

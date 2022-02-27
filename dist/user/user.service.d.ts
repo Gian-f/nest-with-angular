@@ -9,5 +9,5 @@ export declare class UserService {
         email: string;
         name: string;
     }>;
-    findOne(id: number): string;
+    findByEmail(email: string): import(".prisma/client").Prisma.Prisma__UserClient<import(".prisma/client").User>;
 }
