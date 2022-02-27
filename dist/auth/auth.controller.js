@@ -13,6 +13,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthController = void 0;
+const is_public_decorator_1 = require("./decorators/is-public.decorator");
 const local_auth_guard_1 = require("./guards/local-auth.guard");
 const auth_service_1 = require("./auth.service");
 const common_1 = require("@nestjs/common");
@@ -26,6 +27,7 @@ let AuthController = class AuthController {
     }
 };
 __decorate([
+    (0, is_public_decorator_1.IsPublic)(),
     (0, common_1.Post)('login'),
     (0, common_1.HttpCode)(common_1.HttpStatus.OK),
     (0, common_1.UseGuards)(local_auth_guard_1.LocalAuthGuard),

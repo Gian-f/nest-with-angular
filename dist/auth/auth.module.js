@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthModule = void 0;
+const jwt_strategy_1 = require("./strategies/jwt.strategy");
 const user_module_1 = require("./../user/user.module");
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
@@ -24,7 +25,7 @@ AuthModule = __decorate([
                 signOptions: { expiresIn: '30d' },
             }),
         ],
-        providers: [auth_service_1.AuthService, local_strategy_1.LocalStrategy],
+        providers: [auth_service_1.AuthService, local_strategy_1.LocalStrategy, jwt_strategy_1.JwtStrategy],
         controllers: [auth_controller_1.AuthController],
     })
 ], AuthModule);
