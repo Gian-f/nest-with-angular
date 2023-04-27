@@ -25,20 +25,4 @@ export class CreateUserDto {
 
   @IsString()
   phone: string;
-
-  @ApiProperty({
-    example: '2001-03-23',
-    description: 'A data de nascimento do usuário',
-  })
-
-  @IsString()
-  createdAt: string;
-
-  @ApiProperty({
-    example: '2023-03-23',
-    description: 'A data de atualização do registro do usuário',
-  })
-
-  @IsString()
-  updatedAt: string;
 }
