@@ -36,9 +36,9 @@ let UserController = class UserController {
     }
 };
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: 'Método responsável por criar um usuário' }),
+    (0, swagger_1.ApiOperation)({ summary: 'Cria um novo usuário.' }),
     (0, swagger_1.ApiCreatedResponse)({
-        description: 'The user has been successfully created.',
+        description: 'O usuário foi criado com sucesso.',
         type: create_user_dto_1.CreateUserDto,
     }),
     (0, swagger_1.ApiBody)({ type: create_user_dto_1.CreateUserDto }),
@@ -49,15 +49,16 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "create", null);
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: 'Método responsável por retornar uma lista de usuários' }),
-    (0, swagger_1.ApiOkResponse)({ description: 'Lista de usuários', type: [create_user_dto_1.CreateUserDto] }),
+    (0, swagger_1.ApiOperation)({ summary: 'Retorna uma lista de todos os usuários cadastrados.' }),
+    (0, swagger_1.ApiOkResponse)({ description: 'A lista de usuários.', type: [create_user_dto_1.CreateUserDto] }),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "findAll", null);
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: 'Método responsável por atualizar um usuário' }),
+    (0, swagger_1.ApiOperation)({ summary: 'Atualiza as informações de um usuário existente.' }),
+    (0, swagger_1.ApiOkResponse)({ description: 'As informações do usuário atualizado.', type: create_user_dto_1.CreateUserDto }),
     (0, common_1.Put)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
@@ -66,7 +67,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "update", null);
 __decorate([
-    (0, swagger_1.ApiOperation)({ summary: 'Método responsável por deleta um usuário' }),
+    (0, swagger_1.ApiOperation)({ summary: 'Deleta um usuário existente.' }),
+    (0, swagger_1.ApiOkResponse)({ description: 'As informações do usuário deletado.', type: create_user_dto_1.CreateUserDto }),
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -74,8 +76,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "delete", null);
 UserController = __decorate([
-    (0, swagger_1.ApiTags)('users'),
-    (0, common_1.Controller)('users'),
+    (0, swagger_1.ApiTags)('Users'),
+    (0, common_1.Controller)('api/v1/users'),
     __metadata("design:paramtypes", [user_service_1.UserService])
 ], UserController);
 exports.UserController = UserController;

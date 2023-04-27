@@ -43,16 +43,16 @@ __decorate([
         example: '2001-03-23',
         description: 'A data de nascimento do usuário',
     }),
-    (0, class_validator_1.IsDate)(),
-    __metadata("design:type", Date)
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
 ], CreateUserDto.prototype, "createdAt", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({
         example: '2023-03-23',
         description: 'A data de atualização do registro do usuário',
     }),
-    (0, class_validator_1.IsDate)(),
-    __metadata("design:type", Date)
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
 ], CreateUserDto.prototype, "updatedAt", void 0);
 exports.CreateUserDto = CreateUserDto;
 //# sourceMappingURL=create-user.dto.js.map

@@ -17,7 +17,16 @@ let UserService = class UserService {
         this.prisma = prisma;
     }
     async create(createUserDto) {
-        const createdUser = await this.prisma.user.create({ data: createUserDto });
+        const formattedCreatedAt = new Date(createUserDto.createdAt).toISOString();
+        const formattedUpdatedAt = new Date(createUserDto.updatedAt).toISOString();
+        const data = {
+            email: createUserDto.email,
+            name: createUserDto.name,
+            phone: createUserDto.phone,
+            createdAt: formattedCreatedAt,
+            updatedAt: formattedUpdatedAt
+        };
+        const createdUser = await this.prisma.user.create({ data });
         return createdUser;
     }
     findByEmail(email) {

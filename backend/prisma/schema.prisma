@@ -16,6 +16,6 @@ model User {
   email    String @unique
   phone    String
   name String  
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt String 
+  updatedAt String
 }

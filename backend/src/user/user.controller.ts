@@ -7,7 +7,7 @@ import { ApiBody, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } fro
 
 
 @ApiTags('Users')
-@Controller('users')
+@Controller('api/v1/users')
 export class UserController {
 
   constructor(private readonly userService: UserService) {}

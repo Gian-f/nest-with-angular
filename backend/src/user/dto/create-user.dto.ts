@@ -31,14 +31,14 @@ export class CreateUserDto {
     description: 'A data de nascimento do usuário',
   })
 
-  @IsDate()
-  createdAt: Date;
+  @IsString()
+  createdAt: string;
 
   @ApiProperty({
     example: '2023-03-23',
     description: 'A data de atualização do registro do usuário',
   })
 
-  @IsDate()
-  updatedAt: Date;
+  @IsString()
+  updatedAt: string;
 }
